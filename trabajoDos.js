@@ -1,3 +1,12 @@
+// Yami, te deje a lo largo del codigo varios comentarios y observaciones. 
+// En general, tu codigo esta muy bien. Solucionaste bien las funciones, y escribis codigo prolijo y claro. 
+// Solo como comentario, creo que se pueden mejorar los nombres de tus variables, y aunque suene como un detalle muy
+// pequeño, ayuda muchisimo a la legibilidad de tu codigo y te va a diferenciar del resto de los candidatos junior en una
+// busqueda. A pesar de que me parecio muy adorable la variable "cosas" o "platita"... bueno, quiza tu futuro jefe 
+// no lo aprecie tanto!. Asi que seria buena practica a partir de ahora ir pensando nombres de varuables mas descriptivos, 
+// que quien los lea sepa inmediatamente a que te referis. 
+
+
 // Una empresa de venta de computadoras está desarrollando un sistema para llevar registro de ventas. Para ello cuenta con la siguiente información:
 
 // Lista de las vendedoras de la empresa
@@ -194,6 +203,8 @@ function ventasMes(mes, anio) {
         var componentes = local.ventas[index].componentes
         if (local.ventas[index].fecha.getMonth() + 1 == mes && local.ventas[index].fecha.getFullYear() == anio) {
             sumaMes = sumaMes + precioMaquina(componentes)
+            // o mas brevemente:
+//             sumaMes += precioMaquina(componentes)
         }
 
     }
@@ -245,10 +256,24 @@ function componenteMasVendido() {
         console.log(objeto)
     }
     var indice = objeto.cantidadDeVentas.indexOf(Math.max.apply(null, (objeto.cantidadDeVentas)));
+    // buen uso de math.max
     return objeto.nombre[indice]
 }
 
 console.log(componenteMasVendido()); // Monitor GPRS 3000
+
+// // te dejo una version mas breve:
+// function componenteMasVendido () {
+//   var componente = precios[0].componente;
+
+//   for (var i = 0; i < precios.length; i++) {
+//     if (cantidadVentasComponente(precios[i].componente) > cantidadVentasComponente(componente)) {
+//       componente = precios[i].componente;
+//     }
+//   }
+
+//   return componente;
+// }
 
 
 // huboVentas(mes, anio): que indica si hubo ventas en un mes determinado.
@@ -397,7 +422,8 @@ function sucursalDelMes(mes, anio) {
 }
 
 
-
+// quedaria pendiente responder por la posibilidad de reducir el codigo
+// en las funciones ventasVendedora y ventasSucursal
 
 
 console.log(sucursalDelMes(1, 2019)); // "Centro"
